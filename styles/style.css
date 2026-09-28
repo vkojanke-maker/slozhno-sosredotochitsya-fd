@@ -14,21 +14,48 @@
 .header {
   height: 100vh;
   min-height: 668px;
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-columns: minmax(0, 1fr);
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  align-items: start;
   position: relative;
   padding: 10px;
 }
 
+.decor__element {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding-right: 25px;
+  font-family: IBM Plex Mono, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #FF0070;
+}
+
+.decor__element::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  background-color: #FF0070;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px #FF0070;
+  position: absolute;
+  top: 9px;
+  right: 9px;
+}
+
+
 .header__theme-menu {
   justify-self: end;
-  margin-top: 65px;
+  padding: 65px 0px;
 }
 
 .header__theme-menu-list {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   gap: 10px;
 }
@@ -36,27 +63,26 @@
 .main__title {
   align-self: center;
   justify-self: start;
-  margin: 0;
   color: #db00ff;
   font-family: 'IBM Plex Mono', sans-serif;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-weight: 700;
   line-height: 0.83;
   text-shadow: 4px 4px 0 var(--accent-color);
+
 }
 
 .header__text {
   justify-self: start;
+  align-self: center;
   max-width: 100%;
   background-color: var(--accent-color);
   font-family: 'IBM Plex Mono', sans-serif;
   font-weight: 700;
-  margin-bottom: 66px;
   color: #000028;
   font-size: 18px;
   line-height: 23.4px;
   letter-spacing: 0%;
-  width: 355px;
 }
 
 .card__title {
@@ -94,12 +120,14 @@
   font-weight: 400;
 }
 
+
 .main {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: min-content;
-  gap: 50px;
+  gap: 30px;
   padding: 10px;
+  padding-top: 40px;
 }
 
 .card__image {
@@ -116,12 +144,21 @@
   gap: 10px;
 }
 
-.card__image-image:last-child {
-  margin-bottom: 40px;
-}
 
 .footer .main__title {
   text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.footer {
+  position: relative;
+  height: 100vh;
+  min-height: 668px;
+  padding: 10px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header::after,
@@ -135,15 +172,37 @@
 .header::after {
   border-top: 1px solid #FF0070;
   border-right: 1px solid #FF0070;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
 }
 
 .header::before {
   border-bottom: 1px solid #FF0070;
   border-left: 1px solid #FF0070;
-  bottom: 0;
-  left: 0;
+  bottom: 10px;
+  left: 10px;
+}
+
+.footer::after,
+.footer::before {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  content: "";
+}
+
+.footer::after {
+  border-top: 1px solid #FF0070;
+  border-right: 1px solid #FF0070;
+  top: 10px;
+  right: 10px;
+}
+
+.footer::before {
+  border-bottom: 1px solid #FF0070;
+  border-left: 1px solid #FF0070;
+  bottom: 10px;
+  left: 10px;
 }
 
 .header__theme-menu-button {
@@ -155,12 +214,80 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 18px;
-  letter-spacing: 6%;
+  letter-spacing: 0%;
   text-align: center;
   color: #FF0070;
-  padding: 4px 13px;
+  display: flex;
+  width: 70px;
+  height: 26px;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .header__theme-menu-button_active {
   border: 1px solid #FF0070;
 }
+
+.card__text-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.card__text-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.card__subtitle-diff {
+  margin-bottom: 20px;
+}
+
+@media (width >=768px) {
+  .page {
+    max-width: 768px;
+    }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 155px;
+    padding: 20px;
+    padding-left: 0px;
+  }
+
+  .main__title {
+    align-self: start;
+    margin-top: 25px;
+  }
+
+  .header__text {
+    max-width: 364px;
+    align-self: end;
+  }
+
+  .header__theme-menu {
+    align-self: end;
+  }
+
+  .header__theme-menu {
+    padding: 0px;
+  }
+
+  .header::after,
+  .footer::after,
+  .decor__element {
+    top: 20px;
+    right: 20px;
+  }
+
+  .header::before,
+  .footer::before {
+    bottom: 20px;
+    left: 20px;
+  }
+
+}
+
