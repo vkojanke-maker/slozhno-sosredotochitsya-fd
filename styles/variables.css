@@ -5,4 +5,20 @@
 :root {
   --bg-image: url('../images/cover-image-dark.png');
   --accent-color: #FF0070;
+  --pink: #f1b2ce;
+  --purple: #db00ff;
+  --lavender: #c7a3ff;
+  --white: #ffffff;
+  --bg-dark: #000028;
+  --dark-text: #000028;
+  --btn-color: #FF0070;
+  --gap-s: 10px;
+  --gap-m: 20px;
+  --font-main: 'IBM Plex Mono', sans-serif;
+  --font-size-base: 18px;
+  --line-height-base: 23.4px;
+  --font-size-title: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  --line-height-title: 0.83;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
 }
