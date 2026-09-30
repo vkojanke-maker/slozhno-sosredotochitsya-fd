@@ -33,6 +33,7 @@
   letter-spacing: 0%;
   text-align: center;
   color: var(--decor-color);
+  text-transform: uppercase;
 }
 
 .decor__element::after {
@@ -79,7 +80,7 @@
   background-color: var(--subtitle-bg-color);
   font-family: var(--font-main);
   font-weight: var(--font-weight-bold);
-  color: var(--dark-text-color);
+  color: var(--text-color-on-bg);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   letter-spacing: 0%;
@@ -101,7 +102,7 @@
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   letter-spacing: 0%;
-  color: var(--dark-text-color);
+  color: var(--text-color-on-bg);
   background-color: var(--subtitle-bg-color);
   margin-bottom: 10px;
 }
@@ -161,44 +162,22 @@
   align-items: center;
 }
 
-.header::after,
-.header::before {
+.decorated-zone::after,
+.decorated-zone::before {
   width: 25px;
   height: 25px;
   position: absolute;
   content: "";
 }
 
-.header::after {
+.decorated-zone::after {
   border-top: 1px solid var(--decor-color);
   border-right: 1px solid var(--decor-color);
   top: 10px;
   right: 10px;
 }
 
-.header::before {
-  border-bottom: 1px solid var(--decor-color);
-  border-left: 1px solid var(--decor-color);
-  bottom: 10px;
-  left: 10px;
-}
-
-.footer::after,
-.footer::before {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  content: "";
-}
-
-.footer::after {
-  border-top: 1px solid var(--decor-color);
-  border-right: 1px solid var(--decor-color);
-  top: 10px;
-  right: 10px;
-}
-
-.footer::before {
+.decorated-zone::before {
   border-bottom: 1px solid var(--decor-color);
   border-left: 1px solid var(--decor-color);
   bottom: 10px;
@@ -337,21 +316,16 @@
 
   .header__theme-menu {
     align-self: end;
-  }
-
-  .header__theme-menu {
     padding: 0px;
   }
 
-  .header::after,
-  .footer::after,
+  .decorated-zone::after,
   .decor__element {
     top: 20px;
     right: 20px;
   }
 
-  .header::before,
-  .footer::before {
+  .decorated-zone::before {
     bottom: 20px;
     left: 20px;
   }
@@ -455,7 +429,4 @@
     gap: 20px;
     align-items: start;
   }
-}
-.theme-light .decor__element {
-  display: none;
 }

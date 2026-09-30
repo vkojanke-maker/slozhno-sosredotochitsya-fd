@@ -10,7 +10,7 @@
   --title-color: #FFC2E6;
   --subtitle-bg-color: #FF8DCB;
   --subtitle-text-color:#353430;
-  --dark-text-color: #353430;
+  --text-color-on-bg: #353430;
   --card-text-color: #353430;
   --decor-color: #353430;
   --shadow-color: #FF8DCB;
@@ -23,6 +23,10 @@
     чем стили в медиазапросе предпочтений пользователя
   */
 }
+
+:root.theme-light .decor__element {
+  display: none;
+} 
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -41,8 +45,13 @@
     --focus-color: #353430;
 
   }
-
-  .theme-auto .decor__element {
+  
+  :root.theme-light .decor__element {
     display: none;
-  }  
+  }
+
+  .theme-auto .decor__element { 
+    display: none; 
+  }
+
 }
