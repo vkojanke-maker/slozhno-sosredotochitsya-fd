@@ -5,7 +5,7 @@
   background-image: var(--bg-image);
   background-position: center;
   background-attachment: fixed;
-  background-color: var(--bg-dark);
+  background-color: var(--bg-color);
   background-size: cover; 
   background-repeat: no-repeat;
   max-width: 375px;
@@ -32,16 +32,16 @@
   line-height: var(--line-height-base);
   letter-spacing: 0%;
   text-align: center;
-  color: var(--accent-color);
+  color: var(--decor-color);
 }
 
 .decor__element::after {
   content: "";
   width: 9px;
   height: 9px;
-  background-color: var(--accent-color);
+  background-color: var(--decor-color);
   border-radius: 50%;
-  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--shadow-color);
   position: absolute;
   top: 9px;
   right: 9px;
@@ -63,12 +63,12 @@
 .main__title {
   align-self: center;
   justify-self: start;
-  color: var(--purple);
+  color: var(--title-color);
   font-family: var(--font-main);
-  font-size: var(--font-size-title);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-title);
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 var(--shadow-color);
 
 }
 
@@ -76,10 +76,10 @@
   justify-self: start;
   align-self: center;
   max-width: 100%;
-  background-color: var(--accent-color);
+  background-color: var(--subtitle-bg-color);
   font-family: var(--font-main);
   font-weight: var(--font-weight-bold);
-  color: var(--dark-text);
+  color: var(--dark-text-color);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   letter-spacing: 0%;
@@ -91,7 +91,7 @@
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   letter-spacing: 0%;
-  color: var(--accent-color);
+  color: var(--subtitle-text-color);
   margin-bottom: 20px;
 }
 
@@ -101,8 +101,8 @@
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   letter-spacing: 0%;
-  color: var(--dark-text);
-  background-color: var(--accent-color);
+  color: var(--dark-text-color);
+  background-color: var(--subtitle-bg-color);
   margin-bottom: 10px;
 }
 
@@ -112,7 +112,7 @@
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   letter-spacing: 0%;
-  color: var(--pink);
+  color: var(--card-text-color);
   padding-bottom: 20px;
 }
 
@@ -146,7 +146,7 @@
 
 
 .footer .main__title {
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--shadow-color);
 }
 
 .footer {
@@ -170,15 +170,15 @@
 }
 
 .header::after {
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
   top: 10px;
   right: 10px;
 }
 
 .header::before {
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--decor-color);
+  border-left: 1px solid var(--decor-color);
   bottom: 10px;
   left: 10px;
 }
@@ -192,15 +192,15 @@
 }
 
 .footer::after {
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
   top: 10px;
   right: 10px;
 }
 
 .footer::before {
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--decor-color);
+  border-left: 1px solid var(--decor-color);
   bottom: 10px;
   left: 10px;
 }
@@ -226,13 +226,15 @@
 }
 
 .header__theme-menu-button:not(.header__theme-menu-button_active):hover {
-  outline: 1px solid #FF007066;
+  outline: 1px solid var(--btn-hover-color);
+
 }
 
 .header__theme-menu-button:not(.header__theme-menu-button_active):focus-visible {
   outline: none;
   text-decoration: underline;
-  text-decoration-color: var(--accent-color);
+  text-decoration-color: var(--btn-focus-color);
+  text-underline-offset: 3px;
 }
 
 .header__theme-menu-button_active {
@@ -242,7 +244,7 @@
 
 .card__text-link {
   text-decoration: none;
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--shadow-color);
 }
 
 .card__text-link:hover {
@@ -252,7 +254,7 @@
 }
 
 .card__text-link:focus-visible {
-  outline: 1px solid var(--pink);
+  outline: 1px solid var(--focus-color);
 }
 
 .card__subtitle-diff {
