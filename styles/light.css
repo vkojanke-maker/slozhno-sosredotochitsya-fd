@@ -35,7 +35,7 @@
     --title-color: #FFC2E6;
     --subtitle-bg-color: #FF8DCB;
     --subtitle-text-color:#353430;
-    --dark-text-color: #353430;
+    --text-color-on-bg: #353430;
     --card-text-color: #353430;
     --decor-color: #353430;
     --shadow-color: #FF8DCB;
@@ -46,10 +46,6 @@
 
   }
   
-  :root.theme-light .decor__element {
-    display: none;
-  }
-
   .theme-auto .decor__element { 
     display: none; 
   }
