@@ -337,10 +337,17 @@
   .footer .main__title {
     align-self: center;
   }
+
+    .footer.decorated-zone::after {
+    top: 30px;
+  }
+
+  .footer.decorated-zone::before {
+    bottom: 10px;
+  }
   
   .card__image {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 260px 315px 433px;
     gap: 20px;
   }
 
@@ -429,4 +436,10 @@
     gap: 20px;
     align-items: start;
   }
+
+  .footer {
+    min-height: 768px;
+  }
+
+
 }
